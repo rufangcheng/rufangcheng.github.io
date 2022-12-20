@@ -1,0 +1,567 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/assets/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/assets/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Array                            Index                             Length                            Assign value">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript note">
+<meta property="og:url" content="https://knewangle.com/Javascript%20note/">
+<meta property="og:site_name" content="Knewangle">
+<meta property="og:description" content="Array                            Index                             Length                            Assign value">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/TtAgu93.png">
+<meta property="og:image" content="https://i.imgur.com/LqTj6o2.png">
+<meta property="og:image" content="https://i.imgur.com/OTbfWz6.png">
+<meta property="og:image" content="https://i.imgur.com/eV0vOio.png">
+<meta property="og:image" content="https://i.imgur.com/8iGgjqj.png">
+<meta property="og:image" content="https://i.imgur.com/iDEyyzF.png">
+<meta property="og:image" content="https://i.imgur.com/ox8pGK5.png">
+<meta property="og:image" content="https://i.imgur.com/bjplqov.png">
+<meta property="og:image" content="https://i.imgur.com/rtRAQSZ.png">
+<meta property="og:image" content="https://i.imgur.com/byJrf3G.png">
+<meta property="og:image" content="https://i.imgur.com/iiwJ9Nu.png">
+<meta property="og:image" content="https://i.imgur.com/YWmfhB6.png">
+<meta property="og:image" content="https://i.imgur.com/ig6HKrs.png">
+<meta property="og:image" content="https://i.imgur.com/YB5uIsT.png">
+<meta property="og:image" content="https://i.imgur.com/5s5Jqrf.png">
+<meta property="og:image" content="https://i.imgur.com/7e7fSoo.png">
+<meta property="og:image" content="https://i.imgur.com/jmnDtEa.png">
+<meta property="og:image" content="https://i.imgur.com/Ksey3CU.png">
+<meta property="og:image" content="https://i.imgur.com/NTzoOj1.png">
+<meta property="og:image" content="https://i.imgur.com/cNLbUw2.png">
+<meta property="og:image" content="https://i.imgur.com/tEnb5SJ.png">
+<meta property="og:image" content="https://i.imgur.com/NyF63QY.png">
+<meta property="og:image" content="https://i.imgur.com/0umWUPu.png">
+<meta property="og:image" content="https://i.imgur.com/6S7EKud.png">
+<meta property="og:image" content="https://i.imgur.com/PLBiKmU.png">
+<meta property="og:image" content="https://i.imgur.com/qe5kXsc.png">
+<meta property="og:image" content="https://i.imgur.com/hYsFoKK.png">
+<meta property="og:image" content="https://i.imgur.com/3xfelp0.png">
+<meta property="og:image" content="https://i.imgur.com/tkgjhQO.png">
+<meta property="og:image" content="https://i.imgur.com/Cn8RE12.png">
+<meta property="og:image" content="https://i.imgur.com/XWWV6G7.png">
+<meta property="og:image" content="https://i.imgur.com/9KvpqLf.png">
+<meta property="og:image" content="https://i.imgur.com/r9oyebD.png">
+<meta property="og:image" content="https://i.imgur.com/ydcMcow.png">
+<meta property="og:image" content="https://i.imgur.com/arf2kd5.png">
+<meta property="og:image" content="https://i.imgur.com/zsikoFe.png">
+<meta property="og:image" content="https://i.imgur.com/9yIwUuJ.png">
+<meta property="og:image" content="https://i.imgur.com/WwaM1jn.png">
+<meta property="og:image" content="https://i.imgur.com/wQLNTWT.png">
+<meta property="og:image" content="https://i.imgur.com/HqABPK0.png">
+<meta property="og:image" content="https://i.imgur.com/K83ezwt.png">
+<meta property="og:image" content="https://i.imgur.com/ldsBxeh.png">
+<meta property="og:image" content="https://i.imgur.com/dP4L1KS.png">
+<meta property="og:image" content="https://i.imgur.com/s1WrmEC.png">
+<meta property="og:image" content="https://i.imgur.com/HsmqmH7.png">
+<meta property="og:image" content="https://i.imgur.com/o28DSy1.png">
+<meta property="og:image" content="https://i.imgur.com/tVOJM2U.png">
+<meta property="og:image" content="https://i.imgur.com/2i6DALG.png">
+<meta property="article:published_time" content="2022-11-20T16:24:16.000Z">
+<meta property="article:modified_time" content="2022-12-20T16:27:53.884Z">
+<meta property="article:author" content="Kezia Cheng">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/TtAgu93.png"><title>Javascript note | Knewangle</title><link ref="canonical" href="https://knewangle.com/Javascript%20note/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">Tags</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-dice-d6"></i></span><span class="header-nav-menu-item__text">About</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Knewangle</div><div class="header-banner-info__subtitle">Kezia's new angle</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Javascript note</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-11-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-12-21</span></span></div></header><div class="post-body">
+        <h2 id="Array">
+          <a href="#Array" class="heading-link"><i class="fas fa-link"></i></a><a href="#Array" class="headerlink" title="Array"></a>Array</h2>
+      <p><img src="https://i.imgur.com/TtAgu93.png" alt=""><br><img src="https://i.imgur.com/LqTj6o2.png" alt=""><br><img src="https://i.imgur.com/OTbfWz6.png" alt=""><br><img src="https://i.imgur.com/eV0vOio.png" alt=""><br><img src="https://i.imgur.com/8iGgjqj.png" alt=""><br><img src="https://i.imgur.com/iDEyyzF.png" alt=""><br><img src="https://i.imgur.com/ox8pGK5.png" alt=""></p>
+
+        <h3 id="Index">
+          <a href="#Index" class="heading-link"><i class="fas fa-link"></i></a><a href="#Index" class="headerlink" title="Index"></a>Index</h3>
+      <p><img src="https://i.imgur.com/bjplqov.png" alt=""><br><img src="https://i.imgur.com/rtRAQSZ.png" alt=""></p>
+<p><img src="https://i.imgur.com/byJrf3G.png" alt=""><br><img src="https://i.imgur.com/iiwJ9Nu.png" alt=""></p>
+
+        <h3 id="Length">
+          <a href="#Length" class="heading-link"><i class="fas fa-link"></i></a><a href="#Length" class="headerlink" title="Length"></a>Length</h3>
+      <p><img src="https://i.imgur.com/YWmfhB6.png" alt=""><br><img src="https://i.imgur.com/ig6HKrs.png" alt=""></p>
+
+        <h3 id="Assign-value">
+          <a href="#Assign-value" class="heading-link"><i class="fas fa-link"></i></a><a href="#Assign-value" class="headerlink" title="Assign value"></a>Assign value</h3>
+      <p><img src="https://i.imgur.com/YB5uIsT.png" alt=""><br><img src="https://i.imgur.com/5s5Jqrf.png" alt=""></p>
+<span id="more"></span>
+
+        <h3 id="push-method">
+          <a href="#push-method" class="heading-link"><i class="fas fa-link"></i></a><a href="#push-method" class="headerlink" title="push method"></a>push method</h3>
+      <p><img src="https://i.imgur.com/7e7fSoo.png" alt=""><br><img src="https://i.imgur.com/jmnDtEa.png" alt=""></p>
+
+        <h3 id="unshift-method">
+          <a href="#unshift-method" class="heading-link"><i class="fas fa-link"></i></a><a href="#unshift-method" class="headerlink" title="unshift method"></a>unshift method</h3>
+      <p><img src="https://i.imgur.com/Ksey3CU.png" alt=""><br><img src="https://i.imgur.com/NTzoOj1.png" alt=""></p>
+
+        <h3 id="pop-method">
+          <a href="#pop-method" class="heading-link"><i class="fas fa-link"></i></a><a href="#pop-method" class="headerlink" title="pop method"></a>pop method</h3>
+      <p><img src="https://i.imgur.com/cNLbUw2.png" alt=""><br><img src="https://i.imgur.com/tEnb5SJ.png" alt=""></p>
+
+        <h3 id="shift-method">
+          <a href="#shift-method" class="heading-link"><i class="fas fa-link"></i></a><a href="#shift-method" class="headerlink" title="shift method"></a>shift method</h3>
+      <p><img src="https://i.imgur.com/NyF63QY.png" alt=""><br><img src="https://i.imgur.com/0umWUPu.png" alt=""></p>
+
+        <h3 id="splice-method">
+          <a href="#splice-method" class="heading-link"><i class="fas fa-link"></i></a><a href="#splice-method" class="headerlink" title="splice method"></a>splice method</h3>
+      <p><img src="https://i.imgur.com/6S7EKud.png" alt=""><br><img src="https://i.imgur.com/PLBiKmU.png" alt=""><br><figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">splice(&lt;start index&gt;,&lt;how many items want to be removed&gt;)</span><br></pre></td></tr></table></div></figure></p>
+
+        <h2 id="Object">
+          <a href="#Object" class="heading-link"><i class="fas fa-link"></i></a><a href="#Object" class="headerlink" title="Object"></a>Object</h2>
+      <p><img src="https://i.imgur.com/qe5kXsc.png" alt=""></p>
+
+        <h3 id="read-value-from-object">
+          <a href="#read-value-from-object" class="heading-link"><i class="fas fa-link"></i></a><a href="#read-value-from-object" class="headerlink" title="read value from object"></a>read value from object</h3>
+      <p><img src="https://i.imgur.com/hYsFoKK.png" alt=""><br><img src="https://i.imgur.com/3xfelp0.png" alt=""></p>
+
+        <h4 id="another-method">
+          <a href="#another-method" class="heading-link"><i class="fas fa-link"></i></a><a href="#another-method" class="headerlink" title="another method"></a>another method</h4>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;object_name&gt;['attribute_name']</span><br></pre></td></tr></table></div></figure>
+<p><img src="https://i.imgur.com/tkgjhQO.png" alt=""><br><img src="https://i.imgur.com/Cn8RE12.png" alt=""></p>
+<p>or</p>
+<p><img src="https://i.imgur.com/XWWV6G7.png" alt=""></p>
+<p><strong>Note</strong><br><img src="https://i.imgur.com/9KvpqLf.png" alt=""><br>in this case can only use the 2nd method<br><img src="https://i.imgur.com/r9oyebD.png" alt=""><br><img src="https://i.imgur.com/ydcMcow.png" alt=""></p>
+
+        <h3 id="assign-value">
+          <a href="#assign-value" class="heading-link"><i class="fas fa-link"></i></a><a href="#assign-value" class="headerlink" title="assign value"></a>assign value</h3>
+      <p><img src="https://i.imgur.com/arf2kd5.png" alt=""><br><img src="https://i.imgur.com/zsikoFe.png" alt=""></p>
+
+        <h3 id="modify-value">
+          <a href="#modify-value" class="heading-link"><i class="fas fa-link"></i></a><a href="#modify-value" class="headerlink" title="modify value"></a>modify value</h3>
+      <p><img src="https://i.imgur.com/9yIwUuJ.png" alt=""><br><img src="https://i.imgur.com/WwaM1jn.png" alt=""></p>
+
+        <h3 id="delete-value">
+          <a href="#delete-value" class="heading-link"><i class="fas fa-link"></i></a><a href="#delete-value" class="headerlink" title="delete value"></a>delete value</h3>
+      <p><img src="https://i.imgur.com/wQLNTWT.png" alt=""><br><img src="https://i.imgur.com/HqABPK0.png" alt=""></p>
+
+        <h2 id="object-in-array">
+          <a href="#object-in-array" class="heading-link"><i class="fas fa-link"></i></a><a href="#object-in-array" class="headerlink" title="object in array"></a>object in array</h2>
+      <p><img src="https://i.imgur.com/K83ezwt.png" alt=""><br><img src="https://i.imgur.com/ldsBxeh.png" alt=""><br><img src="https://i.imgur.com/dP4L1KS.png" alt=""><br><img src="https://i.imgur.com/s1WrmEC.png" alt=""></p>
+
+        <h3 id="read-value">
+          <a href="#read-value" class="heading-link"><i class="fas fa-link"></i></a><a href="#read-value" class="headerlink" title="read value"></a>read value</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;array_name&gt;[index].&lt;object_attribute_name&gt;</span><br></pre></td></tr></table></div></figure>
+<p><img src="https://i.imgur.com/HsmqmH7.png" alt=""><br><img src="https://i.imgur.com/o28DSy1.png" alt=""></p>
+
+        <h2 id="Object-in-object">
+          <a href="#Object-in-object" class="heading-link"><i class="fas fa-link"></i></a><a href="#Object-in-object" class="headerlink" title="Object in object"></a>Object in object</h2>
+      <p><img src="https://i.imgur.com/tVOJM2U.png" alt=""><br><img src="https://i.imgur.com/2i6DALG.png" alt=""></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://knewangle.com">Kezia Cheng</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://knewangle.com/Javascript%20note/">https://knewangle.com/Javascript%20note/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://knewangle.com/tags/javascript/">javascript</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/script-timeout-passed-error/"><span class="paginator-prev__text">How to fix Script timeout passed error</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Array"><span class="toc-number">1.</span> <span class="toc-text">
+          Array</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Index"><span class="toc-number">1.1.</span> <span class="toc-text">
+          Index</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Length"><span class="toc-number">1.2.</span> <span class="toc-text">
+          Length</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Assign-value"><span class="toc-number">1.3.</span> <span class="toc-text">
+          Assign value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#push-method"><span class="toc-number">1.4.</span> <span class="toc-text">
+          push method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unshift-method"><span class="toc-number">1.5.</span> <span class="toc-text">
+          unshift method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop-method"><span class="toc-number">1.6.</span> <span class="toc-text">
+          pop method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shift-method"><span class="toc-number">1.7.</span> <span class="toc-text">
+          shift method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#splice-method"><span class="toc-number">1.8.</span> <span class="toc-text">
+          splice method</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object"><span class="toc-number">2.</span> <span class="toc-text">
+          Object</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#read-value-from-object"><span class="toc-number">2.1.</span> <span class="toc-text">
+          read value from object</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#another-method"><span class="toc-number">2.1.1.</span> <span class="toc-text">
+          another method</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#assign-value"><span class="toc-number">2.2.</span> <span class="toc-text">
+          assign value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#modify-value"><span class="toc-number">2.3.</span> <span class="toc-text">
+          modify value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete-value"><span class="toc-number">2.4.</span> <span class="toc-text">
+          delete value</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#object-in-array"><span class="toc-number">3.</span> <span class="toc-text">
+          object in array</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#read-value"><span class="toc-number">3.1.</span> <span class="toc-text">
+          read value</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-in-object"><span class="toc-number">4.</span> <span class="toc-text">
+          Object in object</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/author.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">Joy resides in every step of growth.</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="mailto:hello@math.knewangle.com" target="_blank" rel="noopener" data-popover="email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Kezia Cheng</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v6.2.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ Untitled ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', 'Please enter characters');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script type="application/json" src="/search.json"></script></body></html>
